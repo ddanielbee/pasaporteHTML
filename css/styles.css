@@ -1,0 +1,164 @@
+header, main, footer {
+    padding-left: 240px;
+  }
+
+.side-nav li {
+    padding: 0 !important;
+  }
+ul.side-nav.fixed li.logo {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  min-height: 170px;
+}
+
+.logo img {
+    max-width: 150px;
+}
+ul.side-nav.fixed li.logo:hover {
+  background-color: transparent;
+}
+
+ul.side-nav.fixed li a {
+  font-size: 13px;
+  line-height: 44px;
+  height: 44px;
+}
+
+.side-nav.fixed a {
+  display: block;
+  padding: 0 15px;
+  color: #444;
+}
+
+.bold > a {
+  font-weight: bold;
+}
+
+li.no-padding:hover {
+    background-color: transparent;
+}
+
+nav.top-nav {
+  height: 122px;
+  box-shadow: none;
+  display: block;
+}
+
+nav.top-nav a.page-title {
+  font-size: 48px;
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+nav.top-nav a.page-title:hover {
+  text-decoration: none;
+}
+
+.button-collapse {
+    margin-top: -10px;
+    background-color: transparent;
+}
+
+.button-collapse:hover {
+    text-decoration: none;
+}
+
+.top-nav .container {
+  padding: 30px 0;
+}
+
+li.disabled {
+  pointer-events: none;
+
+}
+
+ul.barbosa li.pelaez a {
+  color: white;
+}
+
+li.disabled a {
+  color: #ddd !important; 
+  font-weight: normal;
+}
+
+.showing  {
+  display: block;
+}
+
+a.grey-text.text-lighten-3:hover {
+  color: #DEDEDE !important;
+}
+
+.header {
+  font-weight: 300;
+}
+
+.container {
+  width: 85% !important;
+}
+
+.caption {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+a.basic:hover {
+  color: #0089CC;
+}
+
+.transicion.card-panel {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.transicion.card-panel:hover {
+  background: #4db6ac !important;
+}
+
+.animacion.card-panel:hover {
+  animation-name: animacion;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes animacion {
+    0%   {background-color: #e57373;}
+    25%  {background-color: #64b5f6;}
+    50%  {background-color: #4fc3f7;}
+    100% {background-color: #f06292;}
+} 
+
+@media only screen and (min-width: 480px){
+
+  nav.a {
+    padding: 15px 0;
+  }
+  a.page-title {
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0; 
+    } 
+    .container {
+        width: 85%;
+    }
+    header {
+      min-height: 150px;
+    }
+}
+
+.test {
+  width: 100px;
+}
+
+.test {
+  width: 200px;
+}

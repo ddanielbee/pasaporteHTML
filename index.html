@@ -1,0 +1,147 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Pasaporte HTML5</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+        <link rel="stylesheet" href="css/prism.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/animate.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body ng-app="app">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+          <div class="navbar-fixed hide-on-large-only">
+              <nav class="top-nav  teal lighten-2">
+                  <div class="container">
+                      <div class="row valign-wrapper">
+                          <div class="col s4 valign">
+                              <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full"><i class="mdi-navigation-menu"></i></a>
+                          </div>
+                          <div class="col s8 valign">
+                              <div class="nav-wrapper">
+                                  <a class="page-title">{{mobileTitle}}</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </nav>
+          </div>
+            <ul id="nav-mobile" class="side-nav fixed">
+                <li class="logo">
+                    <a href="#/"><img src="img/logo.svg" alt=""></a>
+                </li>
+                <li class="no-padding">
+                  <ul class="collapsible collapsible-accordion">
+                    <li ng-class="{'active' : activeMenu == 1}" class="bold"><a class="collapsible-header  waves-effect waves-red" ng-class="{'active' : activeMenu == 1}">Día 1: HTML y CSS</a>
+                      <div class="collapsible-body" ng-class="{'showing' : activeMenu == 1}">
+                        <ul>
+                          <li ng-class="{'active' : activeView == '/html'}"><a href="#/html">HTML</a></li>
+                          <li ng-class="{'active' : activeView == '/css'}"><a  href="#/css">CSS</a></li>
+                          <li ng-class="{'active' : activeView == '/teorico-css'}"><a  href="#/teorico-css">Ejercicio Teórico</a></li>
+                          <li ng-class="{'active' : activeView == '/practico-css'}"><a  href="#/practico-css">Ejercicio Práctico</a></li>
+                          <li ng-class="{'active' : activeView == '/todo-first'}"><a  href="#/todo-first">ToDo App - 1</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li ng-class="{'active': activeMenu == 2}" class="bold"><a class="collapsible-header  waves-effect waves-red" ng-class="{'active': activeMenu == 2}">Día 2: Javascript</a>
+                      <div class="collapsible-body" ng-class="{'showing' : activeMenu == 2}">
+                        <ul>
+                          <li ng-class="{'active' : activeView == '/javascript-intro'}"><a href="#/javascript-intro">Introduccion</a></li>
+                          <li ng-class="{'active' : activeView == '/javascript-functions'}"><a href="#/javascript-functions">Funciones</a></li>
+                          <li ng-class="{'active' : activeView == '/javascript-objects'}"><a href="#/javascript-objects">Objetos</a></li>
+                          <li ng-class="{'active' : activeView == '/javascript-teorico'}"><a href="#/javascript-teorico">Ejercicio Teórico</a></li>
+                          <li ng-class="{'active' : activeView == '/javascript-practico'}"><a href="#/javascript-practico">Ejercicio Práctico</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li ng-class="{'active': activeMenu == 3}" class="bold"><a class="collapsible-header  waves-effect waves-red" ng-class="{'active': activeMenu == 3}">Día 3: Angular</a>
+                      <div class="collapsible-body" ng-class="{'showing' : activeMenu == 3}">
+                        <ul>
+                          <li ng-class="{'active' : activeView == '/angular-intro'}"><a href="#/angular-intro">Introduccion</a></li>
+                          <li ng-class="{'active' : activeView == '/angular-mvc'}"><a href="#/angular-mvc">MVC</a></li>
+                          <li ng-class="{'active' : activeView == '/angular-routes'}"><a href="#/angular-routes">Routes</a></li>
+                          <li ng-class="{'active' : activeView == '/angular-controllers'}"><a href="#/angular-controllers">Controllers</a></li>
+                          <li ng-class="{'active' : activeView == '/todo-second'}"><a href="#/todo-second">ToDo App - 2</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="bold" ng-class="{'active': activeMenu == 4}"><a class="collapsible-header  waves-effect waves-red" ng-class="{'active': activeMenu == 4}">Día 4: BaaS</a>
+                      <div class="collapsible-body" style="">
+                        <ul>
+                          <li ng-class="{'active' : activeView == '/baas-intro'}"><a href="#/baas-intro">Introduccion</a></li>
+                          <li ng-class="{'active' : activeView == '/firebase'}"><a href="#/firebase">Firebase</a></li>
+                          <li ng-class="{'active' : activeView == '/todo-third'}"><a href="#/todo-third">ToDo App - 3</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+            </ul>
+        </header>
+        <main class="view-animate-container">
+          <div class="content view-animate" ng-view></div>
+        </main>
+        <footer class="page-footer teal lighten-2">
+          <div class="row container">
+            <div class="col s6">
+              <h5 class="white-text">Pasaporte HTML5</h5>
+              <p class="grey-text text-lighten-4">Aprendiendo lo que debe ser la web moderna, una cosa a la vez.</p>
+              </div>
+              <div class="col s6 l4 offset-l2">
+                <h5 class="white-text">Links de Interés</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="https://www.codeschool.com/">CodeSchool</a></li>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="http://tympanus.net/codrops/">Codrops</a></li>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="https://css-tricks.com/">CSS Tricks</a></li>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="http://codyhouse.co/">CodyHouse</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-copyright">
+            <div class="container grey-text text-lighten-3">
+              Hecho en el 2015 por <a href="mailto:daniel@eledelab.co?subject=Contacto%20Pasaporte"></a>Daniel Bolívar de <a class="grey-text text-lighten-3" href="http://eledelab.co" target="_blank">Elede Lab</a>
+            </div>
+          </div>
+          </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/vendor/fastclick.js"></script>
+        <script src="js/vendor/placeholder.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+        <script src="js/prism.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!--<script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>-->
+    </body>
+</html>

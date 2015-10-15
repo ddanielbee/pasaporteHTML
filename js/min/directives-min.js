@@ -1,0 +1,1 @@
+app.directive("prism",[function(){return{restrict:"A",link:function(i,n,t){n.ready(function(){Prism.highlightElement(n[0])})}}}]);

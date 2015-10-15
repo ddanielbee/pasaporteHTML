@@ -1,0 +1,104 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">Javascript - Funciones</h1>
+				<h4 class="light grey-text text-lighten-4">Bloques de código reutilizables</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Sería muy tedioso tener que escribir el mismo código miles de veces. Es por esto que existen las funciones y en Javascript, funcionan un poco distinto de lo que estamos acostumbrados.</p>
+			<h3 class="header teal-text text-lighten-2">Qué es una Función ?</h3>
+			<p>Una función es un bloque de código que puede ser reutilizado en cualquier parte del documento. En su forma más básica, una función tiene la siguiente estructura:</p>
+			<pre prism class="language-javascript">
+				<code>
+function miFuncion() {
+	console.log("Hello World");
+}
+				</code>
+			</pre>
+			<p>Esta función se podría usar en cualquier parte del documento de Javascript que estamos escribiendo, tan solo al llamar "miFuncion()".</p>
+			<p>Las funciones traen consigo un tema importante que es el alcance (scope). Variables definidas dentro de una función, solo pueden ser accedidas dentro de esa misma función. Ejemplo:</p>
+			<pre prism class="language-javascript">
+				<code>
+function foo() {
+	var x = 16;
+}
+
+x != y // x no existe y esto botará un error (x is not defined o algo así)
+				</code>
+			</pre>
+			<blockquote>Nota: lo mismo pasa dentro de repetitivas y condicionales, también tienen un alcance definido.</blockquote>
+			<h4 class="header teal-text text-lighten-2">Tipos de Funciones</h4>
+			<p>Existen distintos tipos de funciones. En total son 3:</p>
+			<ul class="collection">
+				<li class="collection-item">Funciones Declaradas</li>
+				<li class="collection-item">Funciones Expresadas</li>
+				<li class="collection-item">Funciones Autoinvocadas</li>
+			</ul>
+			<blockquote>En realidad, solo existen las 2 primeras, pero la tercera es interesante y vale la pena pensarla como un tipo de función.</blockquote>
+			<p>Ejemplos de los 3 tipos son:</p>
+			<pre prism class="language-javascript">
+				<code>
+// Función Declarada, se invoca llamando "bar()".
+
+function bar() {
+	console.log("asdf");
+}
+
+// Función Expresada, se invoca llamando x()
+
+var x = function() {
+	console.log("x");
+};
+
+// Funciones autoinvocadas, se ejecutan automáticamente
+
+(function () {
+    var x = "Hola!!";
+})();
+				</code>
+			</pre>
+			<blockquote>Es importante saber que las funciones en javascript son llevadas automáticamente al inicio del documento, por lo que se pueden llamar antes de ser declaradas / expresadas.</blockquote>
+			<h4 class="header teal-text text-lighten-2">Parámetros y Retorno</h4>
+			<p>Las funciones no serían muy útiles si no pudieran tomar algo y volverlo otra cosa. Eso es exactamente lo que hacen los parámetros y el retorno. Una función puede tomar n cantidad de elementos y usarlos dentro suyo para transformarlos y devolver otra cosa.</p>
+			<pre prism class="language-javascript">
+				<code>
+var suma = function(a, b) {
+	return a + b;
+};
+
+var resta = function(c, d) {
+	return c - d;	
+};
+
+var multiplicacion = function(e, f) {
+	return e * f;
+}
+
+// Cuál es el valor de x ?
+
+var x = multiplicacion(suma(2, 2), resta(5,3));
+				</code>
+			</pre>
+			<blockquote>Las funciones también son variables y pueden ser usadas como parámetros para otras funciones !</blockquote>
+			<h4 class="header teal-text text-lighten-2">Callbacks</h4>
+			<p>En Javascript es muy común el concepto de "Callbacks". Un callback es una función que se ejecuta al terminar de realizarse otra función o, que se ejecuta en el momento en que se cumple alguna condición. Los siguientes son 2 ejemplos que se ven mucho en el desarrollo web en cualquier cosa que use Jquery:</p>
+			<pre prism class="language-javascript">
+				<code>
+$("document").ready(function(){
+	// Realizar todas las acciones de mi código luego de que se cargue el DOM.
+});
+
+$(".foo").click(function(){
+	// Cuando se clickee algo con la clase "foo", realizar una acción.
+});
+				</code>
+			</pre>
+		</div>
+	</div>
+</div>

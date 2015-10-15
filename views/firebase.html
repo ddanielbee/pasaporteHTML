@@ -1,0 +1,48 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">Firebase</h1>
+				<h4 class="light grey-text text-lighten-4">El proveedor más cercano a Angular.</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Firebase es el proveedor de BaaS favorito para cualquier aplicación de Angular.</p>
+		</div>
+		<h3 class="header teal-text text-lighten-2">AngularFire</h3>
+		<p>Este es el nombre que recibe el módulo que nos permite enlazar cualquier aplicación de Angular con nuestra cuenta de Firebase de manera fácil y rápida. Lo primero que debemos hacer es crear una cuenta en <a class="basic" target="_blank" href="https://www.firebase.com">Firebase.com</a>. Una vez hecho eso, debemos enlazar el módulo con estos scripts:</p>
+		<pre prism class="language-markup">
+			<code>
+&lt;!-- Firebase -->
+&lt;script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js">&lt;/script>
+&lt;!-- AngularFire -->
+&lt;script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js">&lt;/script>
+			</code>
+		</pre>
+		<p>Luego inyectamos el módulo de AngularFire a nuestra aplicación:</p>
+		<pre prism class="language-javascript">
+			<code>
+var app = angular.module("app", [
+	
+	"ngRoute",
+	"firebase"
+
+]);
+			</code>
+		</pre>
+		<p>Esto nos permitirá agregar los distintos servicios que presta AngularFire para nuestro desarrollo. son 3: <code>$firebaseObject</code>, <code>$firebaseArray</code> y <code>$firebaseAuth</code>. Pueden leer más de que trata cada uno en la <a class="basic" target="_blank" href="https://www.firebase.com/docs/web/libraries/angular/">documentación</a> de AngularFire.</p>
+		<p>El siguiente paso es inyectar los servicios a nuestros controladores:</p>
+		<pre prism class="language-javascript">
+			<code>
+app.controller("TodoController", function($scope, $firebaseArray) {
+  var ref = new Firebase("https://&lt;SU-APP-EN-FIREBASE>.firebaseio.com/todos");
+});
+			</code>
+		</pre>
+		<p>En este punto ya tienen su aplicación conectada con Firebase.</p>
+	</div>
+</div>

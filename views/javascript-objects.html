@@ -1,0 +1,173 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">Javascript - Objetos</h1>
+				<h4 class="light grey-text text-lighten-4">Contenedores flexibles de información</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Los objetos lo son todo en Javascript. Si alguien entiende los objetos de Javascript, entiende Javascript.</p>
+			<h3 class="header teal-text text-lighten-2">Qué son ?</h3>
+			<p>En Javascript, todo es un objeto. Un entero es un objeto. Un string es un objeto. Una función es un objeto y un objeto es un objeto. Los objetos son variables. Entonces podemos tener objetos que tengan un solo valor, como:</p>
+			<pre prism class="language-javascript">
+				<code>
+	var x = "lalala";
+				</code>
+			</pre>
+			<p>Pero los objetos también pueden tener muchos valores, como:</p>
+			<pre prism class="language-javascript">
+				<code>
+	var x = {x: "5", y: "Hello World !", w: 26};
+				</code>
+			</pre>
+			<p>E incluso, los valores pueden ser de distintos tipos como se ve en el ejemplo anterior. Puede incluso pasar lo siguiente:</p>
+			<pre prism class="language-javascript">
+				<code>
+	var x = {
+			x: "hola",
+			y: "mundo",
+			w: {
+				x: "wow",
+				y: "Inception"
+			}
+		};
+				</code>
+			</pre>
+			<p>Objetos dentro de objetos dentro de objetos dentro de objetos... y ya entienden la idea.</p>
+			<h4 class="header teal-text text-lighten-2">Notación</h4>
+			<p>Para escribir un objeto en Javascript, se utiliza la notación con corchetes x = {}; Cada una de las propiedades lleva un nombre (sin comillas), seguido de dos puntos ":" y luego su valor. Las propiedades son separadas por comas "," excepto la última donde no es necesario. Para acceder a las propiedades de un objeto:</p>
+			<pre prism class="language-javascript">
+				<code>
+	var x = {
+			x: "hola",
+			y: "mundo",
+			w: {
+				x: "wow",
+				y: "Inception"
+			}
+		};
+
+	var y = x.x; 	// y = "hola";
+	var y = x["x"]; // y = "hola";
+				</code>
+			</pre>
+			<p>Para redeclarar propiedades y/o definir nuevas, se hace de la misma forma: </p>
+			<pre prism class="language-javascript">
+				<code>
+	var x = {
+			x: "hola",
+			y: "mundo",
+			w: {
+				x: "wow",
+				y: "Inception"
+			}
+		};
+
+	x.x = "ahora no soy hola";
+	x["x"] = "ahora no soy hola";
+	x.foo = "bar";
+
+	/* Si mostráramos los contenidos de x ahora veríamos algo así:
+	var x = {
+			x: "hola",
+			y: "mundo",
+			w: {
+				x:"wow",
+				y:"Inception"
+			},
+			foo: "bar"
+		};
+	*/
+				</code>
+			</pre>
+			<h4 class="header teal-text text-lighten-2">Prototipos</h4>
+			<p>Javascript está basado en Prototipos. La creación de prototipos como tal es algo un poco muy avanzado para este curso, pero el conocimiento de su existencia no le hace daño a nadie. Cada una de las variables que utilizamos tiene un prototipo dentro del core de Javascript. Piensen en un prototipo de Javascript como en una clase de Java. Tienen propiedades que pueden ser llamadas por cualquiera de los miembros de su clase. Es así como podemos hacer lo siguiente:</p>
+			<pre prism class="language-javascript">
+				<code>
+	var x = "soy un string";
+	var y = x.length();
+
+	// y es el número de caracteres de x.
+				</code>
+			</pre>
+			<blockquote>Seguro nunca se preguntaron de dónde venía ese método, solo lo usaron. Viene del prototipo de String que está declarado en el core de Javascript.</blockquote>
+			<p>Esto nos lleva a lo siguiente y es que un objeto puede tener como parámetro, una función.</p>
+			<pre prism class="language-javascript">
+				<code>
+	var x = {
+			x: "hola",
+			y: "mundo",
+			w: {
+				x: "wow",
+				y: "Inception"
+			},
+			miFuncion: function(a,b,c) {
+				return a-b+c;
+			}
+		};
+
+	// Y la llamamos así:
+
+	x.miFuncion(3,2,5);
+
+	// También podemos agregar funciones a objetos así:
+
+	x.nuevaFuncion = function() {
+		console.log("Aquí se hace algo");
+	}
+
+				</code>
+			</pre>
+			<p>Los objetos de javascript son maravillosos, flexibles, orgánicos y simples de entender y manejar. Además, es de vital importancia entenderlos para poder usar cualquier tipo de librería o api que existe.</p>
+			<h3 class="header teal-text text-lighten-2">JSON</h3>
+			<p>JSON significa "JavaScript Object Notation" y, como su nombre lo indica, se refiere a la manera en que se definen los objetos de javascript. JSON es independiente del lenguaje, es decir, es una forma universal de transmitir datos entre distintos tipos de aplicaciones. No es nada pesado, por lo que es la mejor manera de pedir y enviar datos a una BD. Finalmente, JSON es auto descriptivo, lo que lo hace fácil de entender.</p>
+			<p>El siguiente es un ejemplo de un documento de JSON válido:</p>
+			<pre prism class="language-javascript">
+				<code>
+	{
+	"estudiantes":[
+	    {"primerNombre":"Diego", "apellido":"Barbosa"}, 
+	    {"primerNombre":"Juan Carlos", "apellido":"Peláez"},
+	    {"primerNombre":"Juan David", "apellido":"Pérez"}
+	]
+	}
+				</code>
+			</pre>
+			<p>Como ven, la notación es muy similar a la de un objeto de Javascript con unas cuantas diferencias. Estas son las reglas de sintaxis de JSON:</p>
+			<ul class="collection">
+				<li class="collection-item">La información va en pares de nombre/valor.</li>
+				<li class="collection-item">Los nombres y valores ambos van entre comillas.</li>
+				<li class="collection-item">Los corchetes contienen objetos.</li>
+				<li class="collection-item">Las llaves contienen arreglos.</li>
+				<li>El documento de JSON total siempre va entre corchetes (es un objeto).</li>
+			</ul>
+			<p>Finalmente, para poder usar JSON, se usan los siguientes métodos propios de Javascript:</p>
+			<pre prism class="language-javascript">
+				<code>
+	var json = '{
+	"estudiantes":[
+	    {"primerNombre":"Diego", "apellido":"Barbosa"}, 
+	    {"primerNombre":"Juan Carlos", "apellido":"Peláez"},
+	    {"primerNombre":"Juan David", "apellido":"Pérez"}
+	]
+	}'
+
+	// Para decodificar:
+
+	var decode = JSON.parse(json);
+
+	// Para encodificar un objeto:
+
+	var foo = {x:"bar", y:1};
+
+	var encode = JSON.stringify(foo);
+				</code>
+			</pre>
+		</div>
+	</div>
+</div>

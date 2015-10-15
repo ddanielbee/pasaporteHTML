@@ -1,0 +1,1 @@
+app.factory("testActive",function(t,e){var c={};return c.testActive=function(){e.activeView=t.path()},!0});

@@ -1,0 +1,95 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">HTML 5</h1>
+				<h4 class="light grey-text text-lighten-4">El mito del 5</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Hyper Text Markup Language, la base de absolutamente todo lo que encontramos en la web.</p>
+			<h3 class="header teal-text text-lighten-2">Qué es ?</h3>
+			<p>Es el lenguaje de "Markup" utilizado para construir páginas web. Markup se refiere a una manera de organizar texto que sea distinguible del texto escrito usual, con el que se escribiría una obra literaria por ejemplo. En el caso de HTML, está constituido por <strong>Etiquetas HTML</strong>.</p>
+			<p>Consideren cada etiqueta como una pieza de lego que va construyendo toda una estructura. Usualmente, cada etiqueta va emparejada, como un <strong>&lt;h1></strong>, pero también existen etiquetas que no tienen pareja consideradas como etiquetas vacías. Un ejemplo de esto son las etiquetas <strong>&lt;img></strong></p>
+			<p>Ejemplos de etiquetas y su uso habitual son:</p>
+			<div class="row">
+				<div class="col s12 m6">
+					<pre prism class="language-markup">
+						<code>
+&lt;h1>Título&lt;/h1>
+&lt;h2>Subtítulos&lt;/h2>
+.
+.
+.
+&lt;h6>Más subtítulos&lt;/h6>
+						</code>
+					</pre>
+				</div>
+				<div class="col s12 m6">
+					<pre prism class="language-markup">
+						<code>
+&lt;div>Un contenedor&lt;/div>
+&lt;p>Párrafos&lt;/p>
+&lt;img src="img/urlDeLaImagen.jpg" alt="Texto alternativo">
+						</code>
+					</pre>
+				</div>
+			</div>
+			<blockquote>
+				Para que el texto se vea como se vería en un editor de código, se usa <a class="basic" href="http://prismjs.com/" target="_blank">PrismJS</a>.
+			</blockquote>
+			<p>Hay muchas más etiquetas y de hecho, una de las principales diferencias entre HTML y HTML5 es el tipo de etiquetas que son válidas y el uso que se les da.</p>
+			<h3 class="header teal-text text-lighten-2">HTML vs HTML5</h3>
+			<p>Lo primero que hay que entender es que HTML5 existe desde hace 4 años. Si, 4 años. Esto no es nada nuevo y por tanto, debería dejar de considerarse como algo innovador o importante. De hecho, nosotros nunca conocimos ninguna implementación de HTML por debajo de HTML4 y realmente, es irrelevante.</p>
+			<h4 class="header teal-text text-lighten-2">Doctypes</h4>
+			<p>Doctype es lo primero que debe existir dentro de un documento html para asegurar que sea interpretado correctamente por parte de un navegador. Antes de HTML5, había distintos tipos de Doctypes. Esto se debía a que HTML era basado en <strong>SGML</strong> (Standard Generalized Markup Language) y por tanto necesitaba de un <strong>DTD</strong> (Document Type Definition). Así, en los antiguos tiempos oscuros existía lo siguiente:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+o
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+				</code>
+			</pre>
+			<p>Y dependiendo del tipo de Doctype que se declarara, los navegadores iban a interpretar el documento HTML de distintas maneras. Por fortuna para nosotros, hoy en día solo existe lo siguiente: </p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!doctype html>
+				</code>
+			</pre>
+			<p>Esto se debe a que HTML 5 no está basado en SGML y por lo tanto no necesita una definición que le permita a un navegador interpretarlo, solo tiene una interpretación.</p>
+			<h4 class="header teal-text text-lighten-2">Semántica</h4>
+			<p>La semántica se refiere a que lo que está escrito refleja realmente su significado. En HTML, esto se representa por medio de los tags que significan algo. Entre esos, están los que les mostré anteriormente. También existen <strong>&lt;div></strong> y <strong>&lt;span</strong> que son semánticamente neutrales.</p>
+			<p>HTML5 no introdujo las etiquetas semánticas (solo un par), pero si representa un momento en el tiempo en el que CSS evolucionó de tal manera que las etiquetas de presentación como <strong>&lt;font></strong> se volvieron innecesarias. Es por esto que muchas veces escucharan decir que HTML5 es "más semántico". Es mentira, pero es verdad a la vez.</p>
+			<p>Los elementos más relevantes que introdujo HTML5 son:</p>
+			<ul class="collection">
+				<li class="collection-item">Elementos semánticos como: &lt;header>, &lt;footer>, &lt;article> y &lt;section></li>
+				<li class="collection-item">Atributos de Control para formularios como: number, date, time, calendar y range</li>
+				<li class="collection-item">Elementos gráficos: &lt;svg> y &lt;canvas></li>
+				<li class="collection-item">Elementos multimedia: &lt;audio> y &lt;video></li>
+			</ul>
+			<p>Además de esto, HTML5 introduce unos cuantos API's interesantes, que son: </p>
+			<ul class="collection">
+				<li class="collection-item">HTML Geolocation</li>
+				<li class="collection-item">HTML Drag and Drop</li>
+				<li class="collection-item">HTML Local Storage</li>
+				<li class="collection-item">HTML Application Cache</li>
+				<li class="collection-item">HTML Web Workers</li>
+				<li class="collection-item">HTML SSE</li>
+			</ul>
+			<blockquote>Local Storage es maravilloso y un reemplazo perfecto para las cookies.</blockquote>
+			<h3 class="header teal-text text-lighten-2">Recursos del Desarrollador Web</h3>
+			<p>Como cualquier otra actividad, las herramientas son importantes (más no necesarias). Esta es una lista de herramientas que nos hacen la vida más fácil.</p>
+			<div class="collection">
+				<a class="collection-item" target="_blank" href="http://www.sublimetext.com/3">Sublime Text es mi editor de texto favorito. Es sencillo pero increíblemente robusto y muy expandible.</a>
+				<a class="collection-item" target="_blank" href="https://incident57.com/codekit/">Codekit es una aplicación que conjuga varias tareas del desarrollo web para que sea todo más fácil (solo disponible en OSX).</a>
+				<a class="collection-item" href="http://stackoverflow.com/" target="_blank">Stack Overflow es el repositorio de preguntas y respuestas sobre desarrollo más grande del mundo. Si alguien ha tenido el mismo problema que ustedes, lo ha preguntado aquí y se lo han resuelto. Solo pregúntenle a google como lo harían con un profesor (pero en inglés) y Stack Overflow les entregará la respuesta.</a>
+				<a class="collection-item" href="http://eye-dropper.kepi.cz/" target="_blank">Este add-on para Chrome les va a ahorrar mucho tiempo en su vida al buscar colores y su código Hexadecimal.</a>
+			</div>
+		</div>
+	</div>
+</div>

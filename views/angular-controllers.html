@@ -1,0 +1,73 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">AngularJS - Controllers</h1>
+				<h4 class="light grey-text text-lighten-4">Darle órdenes a las vistas.</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">La última pieza que hace falta para que nuestra aplicación empiece a funcionar, es un controlador.</p>
+			<h3 class="header teal-text text-lighten-2">Controladores</h3>
+			<p>Un controlador está encargado de recibir inputs de los usuarios, reaccionar adecuadamente y manipular la información de los modelos. En las aplicaciones más primitivas, Javascript puro hacía la función de un controlador, pero su implementación es muy engorrosa por la necesidad de estar manipulando el DOM de forma manual. Con la existencia de los modelos de información y la capacidad de Angular de enlazar directamente una vista con un modelo de información que se actualice de forma automática, nos ahorramos ese paso.</p>
+			<h3 class="header teal-text text-lighten-2">Angular Controllers</h3>
+			<p>Para introducir un controlador en nuestra aplicación de prueba, tenemos que seguir unos cuantos pasos. Primero, debemos agregar el controlador a las reglas de la ruta de la siguiente forma: </p>
+			<pre prism class="language-javascript">
+				<code>
+var app = angular
+  .module('app', [    
+    'ngRoute'
+  ]) 
+  .config(function ($routeProvider) {
+    $routeProvider      
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'TestController'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+				</code>
+			</pre>
+			<blockquote>Dentro de Angular, un mismo controlador puede controlar varias rutas o cada ruta puede tener un controlador individual. La decisión se debe tomar basándose en el tipo de información que se vaya a compartir entre las distintas rutas.</blockquote>
+			<p>En este punto ya nuestro módulo sabe que esta ruta está siendo controlada por un "TestController" que todavía no hemos creado. Creémoslo entonces:</p>
+			<pre prism class="language-javascript">
+				<code>
+app.controller('TestController', function($scope) {
+	
+});
+				</code>
+			</pre>
+			<blockquote>Esto va en un archivo de js que puede tener cualquier nombre. Este se llama test.js. Lo importante es recordar incluirlo dentro del index.html después del archivo donde vaya el módulo.</blockquote>
+			<p>En este punto, ya tenemos creado un controlador que maneja la vista definida en la ruta, pero todavía no hace nada. Que incluyamos el servicio "$scope" de Angular, es debido a que es la implementación que hace Angular de un modelo. Anteriormente mencionamos que existe un $rootScope y un $scope. Así como el alcance de las funciones, el modelo de Angular también tiene un alcance. Para el caso de $scope, la información que contenga el modelo puede ser vista solo por aquello sobre lo que el controlador tenga poder, es decir, la vista. $rootScope en cambio es global y cualquier parte del módulo tiene acceso a esta información.</p>
+			<p>Para que pase algo dentro de este controlador, definamos una variable.</p>
+			<pre prism class="language-javascript">
+				<code>
+app.controller('TestController', function($scope) {
+	$scope.nombre = "Aeris Gainsborough";
+});
+				</code>
+			</pre>
+			<p>E incluyamos esta variable dentro de nuestra vista. En views/main.html:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;h1>El nombre es: {{nombre}}&lt;/h1>					
+				</code>
+			</pre>
+			<blockquote>Angular utiliza para su servicio de templates un motor llamado "Handlebars", más información sobre Handlebars <a class="basic" target="_blank" href="http://handlebarsjs.com/">aquí</a>.</blockquote>
+			<p>Como último paso, incluyamos un elemento que cambie por medio de la interacción del usuario nuestro modelo de información.</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;h1>El nombre es: {{nombre}}&lt;/h1>
+&lt;input type="text" ng-model="nombre">				
+				</code>
+			</pre>
+			<p>Ahora, cuando escribamos algo en este input, va a cambiar inmediatamente nuestro modelo de información y el cambio se verá reflejado en nuestra vista.</p>
+		</div>
+	</div>
+</div>

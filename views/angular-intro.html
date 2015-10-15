@@ -1,0 +1,59 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">AngularJS - Introducción</h1>
+				<h4 class="light grey-text text-lighten-4">Un framework para la web moderna.</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Angular es un framework basado en Javascript y pensado para crear aplicaciones web ricas en interacción.</p>
+			<h3 class="header teal-text text-lighten-2">Qué es ?</h3>
+			<p>Como se dijo antes, Angular es un Framework. Un framework es un marco sobre el cual se construye algo. Considérenlo un set de bloques de lego que van muy bien juntos y pueden crear una construcción entera. Está basado en Javascript y, lo que es muy importante, es Javascript "Vainilla". Esto quiere decir que no necesita ningún tipo de dependencias de terceros como Jquery para funcionar y no obliga a los que lo aprendemos a escribir Javascript de otra forma tampoco.</p>
+			<p>Los creadores de Angular lo definen como una solución al mayor problema que tiene HTML: que no fue creado pensando en vistas dinámicas. Esto quiere decir que no fue creado considerando que el contenido que se muestra pueda o necesite cambiar de manera dinámica dependiendo de la interacción de un usuario. Es por esto que HTML como tal no puede realizar ningún tipo de interacción directa con el usuario y siempre necesita ayuda de Javascript para lograrlo. Angular cubre ese hueco de HTML, haciendo que su contenido se vuelva dinámico fácilmente.</p>
+			<h3 class="header teal-text text-lighten-2">Qué hace ?</h3>
+			<p>Angular enlaza información. Esto quiere decir que puede actualizar el modelo de información en el momento justo en que cambia. Esto es especialmente útil porque remueve la manipulación del DOM de lo que debemos hacer. Insertar HTML dependiendo del resultado de un llamado de Ajax es cosa del pasado si usamos Angular.</p>
+			<p>Añade Controladores a nuestras vistas de HTML, que saben automáticamente cuando el contenido cambia y pueden reaccionar de forma acorde a los cambios, sin necesidad de incluir la manipulación del DOM usual.</p>
+			<p>Angular puede conectar la información que se cambia en el HTML directamente con la información persistente en alguna base de datos, sin necesidad que el usuario se de cuenta que su información fue grabada y sin que tenga que recargar la página para ver los cambios.</p>
+			<p>Crear sus componentes es fácil y son reusables de manera sencilla. Esto permite que involucremos tanto Angular como cualquier otro framework en la construcción de cualquier aplicación. Además de esto, los componentes de Angular van individualmente y se agregan a medida que los necesitemos. Esto quiere decir que no tenemos que comprometernos enteramente con todo el framework para que funcione: podemos tomar solo lo que queremos y nos sirve e ignorar lo demás.</p>
+			<h3 class="header teal-text text-lighten-2">Empezando una aplicación con Angular</h3>
+			<p>La parte más importante de cualquier aplicación de Angular es entender sus componentes. Angular está compuesto de Directivas, Módulos, Controladores y (algunas veces) Vistas. Una directiva es simplemente un set de instrucciones que pueden ingresarse directamente al documento HTML y van a devolver un resultado siempre. Angular está lleno de Directivas por default pero lo interesante es que podemos crear las nuestras propias.</p>
+			<p>El otro componente del que hablaremos inmediatamente, son los Módulos. Los módulos son el centro de Angular, son aquellos que tienen dentro toda la aplicación y la lógica de cómo se van a manejar las cosas.</p>
+			<p>Cualquier aplicación de Angular empieza por lo siguiente:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>Angular&lt;/title>
+&lt;/head>
+&lt;body ng-app="app">
+	...
+&lt;/body>
+&lt;/html>
+				</code>
+			</pre>
+			<blockquote>Aquí, estamos definiendo que el módulo que va a controlar esta aplicación se llama "app" y va a tener control sobre todo lo que vaya dentro del body.</blockquote>
+			<p>El elemento donde vaya la directiva "ng-app" es irrelevante, pero hay que tener en cuenta que se tendrá control solo sobre lo que esté dentro de dicho elemento. Puede incluso ser todo el documento html !</p>
+			<p>El segundo paso en cualquier aplicación de Angular es definir el módulo. Es una buena práctica que el módulo vaya definido en un archivo aparte, usualmente llamado app.js</p>
+			<pre prism class="language-javascript">
+				<code>
+var app = angular.module('app', []);
+				</code>
+			</pre>
+			<blockquote>Dentro del arreglo que recibe como segundo parámetro el método angular.module van las dependencias. Estos son otros módulos a los que queremos tener acceso dentro de nuestro módulo principal, pero más sobre eso después.</blockquote>
+			<p>Es importante no olvidar agregar el archivo app.js a nuestro documento html !</p>
+			<p>Estos son recursos que nos ayudan a aprender Angular desde 0:</p>
+			<div class="collection">
+				<a class="collection-item" href="https://angularjs.org/" target="_blank">AngularJS.org</a>
+				<a class="collection-item" href="http://campus.codeschool.com/courses/shaping-up-with-angular-js/intro" target="_blank">Codeschool</a>
+				<a class="collection-item" href="https://thinkster.io/a-better-way-to-learn-angularjs/" target="_blank">Thinkster.io tutorial</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">AngularJS - MVC</h1>
+				<h4 class="light grey-text text-lighten-4">Model - View - Controller</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Antes de continuar con lo que es Angular, tomémonos un tiempo para entender qué es el patrón MVC.</p>
+			<h3 class="header teal-text text-lighten-2">Qué es ?</h3>
+			<p>Las siglas significan "Model View Controller" o Modelo Vista Controlador y es un patrón de arquitectura para el desarrollo de interfaces de usuario que busca separar, en 3 componentes conectados, cualquier aplicación. La idea es mantener separada la lógica, de los elementos visuales y ambos separados de la información que se ve. El camino es el siguiente: El usuario Usa el controlador -> El Controlador manipula el Modelo de información -> El Modelo de Información actualiza la vista -> El usuario ve la vista. Es un ciclo donde los 3 agentes, aunque separados logicamente, siguen conectados a nivel funcional. También, hay que tener en cuenta que el patrón MVC no tiene una implementación fija y permite que los diferentes frameworks hagan su propia interpretación de cómo debería manejarse.</p>
+			<h4 class="header teal-text text-lighten-2">El Modelo</h4>
+			<p>Lo que se denomina "Modelo" es realmente la información que está siendo manipulada / mostrada en todo momento. Es un término flexible en cuanto a que debe, por naturaleza, ser dinámico. La información que contiene un modelo está en constante cambio y su misión es actualizarla de forma acorde. Dentro de Angular, el modelo está definido de 2 maneras: $rootScope y $scope.</p>
+			<h4 class="header teal-text text-lighten-2">El Controlador</h4>
+			<p>Este es el titiritero, el encargado del backstage que hace que todo funcione bien. La misión del controlador es recibir los inputs de un agente, usualmente un usuario, reaccionar acorde y manipular la información que hay en el modelo de forma adecuada. Dentro de Angular, está definido por los Controllers.</p>
+			<h4 class="header teal-text text-lighten-2">Las Vistas</h4>
+			<p>Esto es lo que se ve, el verdadero Frontend. Es sobre el único elemento que el usuario tiene algún tipo de control ya que es el único con el que puede interactuar. Su misión es mostrar la información del modelo de forma actualizada y adecuada. Dentro de Angular, están definidas por los Views.</p>
+			<blockquote>Esta página utiliza un patrón MVC muy sencillo. Pueden encontrar cuáles son las vistas, dónde se ve el modelo y algo que claramente haga el controlador ?</blockquote>
+		</div>
+	</div>
+</div>

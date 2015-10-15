@@ -1,0 +1,223 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">Javascript - Introducción</h1>
+				<h4 class="light grey-text text-lighten-4">La inyección de interacción en la web</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Javascript es el lenguaje propio de los navegadores que nos permite interactuar con el DOM.</p>
+			<h3 class="header teal-text text-lighten-2">Qué es ?</h3>
+			<p>Aparte del nombre y algunas similaridades en la sintáxis, Javascript no tiene nada que ver con Java. Vive en el cliente y sus implementaciones le permiten a scripts leídos por el cliente interactuar con el usuario, controlar el browser y comunicarse asincrónicamente con una base de datos. A pesar de que Javascript fuera pensado inicialmente solo para existir en el cliente (los navegadores), existe también la posibilidad de escribir código de servidor en Javascript, haciendo uso de lenguajes como Node.js.</p>
+			<p>El código en Javascript usualmente se ve así:</p>
+			<pre prism class="language-javascript">
+				<code>
+var foo = "bar";
+foo += " foo"
+console.log(foo);
+				</code>
+			</pre>
+			<blockquote>El ejemplo de arriba escribiría "barfoo" en la consola.</blockquote>
+			<p>Javascript puede ser escrito en el tag <strong>&lt;head></strong> o el <strong>&lt;body></strong> de un documento html y al igual que CSS hay varias formas de enlazarlo con un website.</p>
+			<p>Directamente en el código html:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>Example&lt;/title>
+	&lt;script>
+		var myTest = "Hi, I'm Javascript";
+	&lt;/script>
+&lt;/head>
+&lt;body>
+	... content
+
+	&lt;script>
+	var mySecondTest = "Hi, I'm also Javascript";
+	&lt;/script>
+&lt;/body>
+&lt;/html>
+				</code>
+			</pre>
+			<p>O enlazando un archivo externo:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>Example&lt;/title>
+&lt;/head>
+&lt;body>
+	... content
+	&lt;script src="js/myJsFile.js">&lt;/script>
+&lt;/body>
+&lt;/html>
+				</code>
+			</pre>
+			<blockquote>Las buenas prácticas dictan que debemos enlazar los archivos de forma externa y no escribirlo directamente en el documento html. Además, es mejor si va al final del body. Excepciones a esta regla son: Modernizr, el api de Facebook y Google Analytics, entre otras.</blockquote>
+			<h4 class="header teal-text text-lighten-2">Variables</h4>
+			<p>Como cualquier otro lenguaje de programación, Javascript maneja variables. Estas pueden ser de los mismos tipos a los que ya estamos acostumbrados, pero tengan en cuenta que, a pesar de que existen tipos de variables, Javascript es lo suficientemente inteligente para saber qué tipo de variable es cada elemento sin que nosotros le digamos. Aquellos con familiaridad a Java, Objective-C y otros lenguajes, sabrán que esto no es siempre así. Los siguientes son ejemplos de variables.</p>
+			<pre prism class="language-javascript">
+				<code>
+var x = 5; 						// Un int.
+var y = "5"; 					// Un string.
+var z = 5.1; 					// Un float.
+var foo = [x,y,z]; 				// Un array.
+var bar = {x:5, y:"5", z:5.1};  // Un objeto.
+var verdad = true; 				// un Boolean
+
+// El siguiente bloque declara varias variables en un estilo de shorthand.
+var a = "primera",
+	b = "segunda",
+	c = "tercera",
+	d = "cuarta";
+
+// Y una variable también puede ser declarada sin valor inicial.
+var e; // undefined
+e = "Ahora si tengo valor."
+				</code>
+			</pre>
+			<blockquote>Especialmente en Javascript a nivel mundial se utiliza la convención "CamelCase" para escribir las variables, iniciándose la primera letra con minúscula. Así, una variable debería llamarse en el estilo "miVariableBonita" y no "Mivariablebonita". También en ocasiones se utilizan sub-guiones. El guión está reservado para la resta.</blockquote>
+			<h4 class="header teal-text text-lighten-2">Operaciones
+			</h4>
+			<p>Igualmente, como en cualquier otro lenguaje, existen las operaciones. Los siguientes son los tipos de operadores que existen:</p>
+			<pre prism class="language-javascript">
+				<code>
+8 + 5; // Adición (13)
+8 - 5; // Substracción (3)
+8 * 5; // Multiplicación (40)
+8 / 5; // División (1.6)
+8 % 5; // Módulo (3)
+8 ++;  // Incremento (9)
+8 --;  // Decremento (7)
+				</code>
+			</pre>
+			<blockquote>La suma también puede realizarse con strings</blockquote>
+			<p>Algo importante a saber de Javascript, es que, ya que las variables no están definidas forzosamente, la suma entre un entero y un string es posible y tiene como resultado un string que contiene al valor entero.</p>
+			<h4 class="header teal-text text-lighten-2">Condicionales y Repetitivas</h4>
+			<p>Los mismos tipos de condicionales y repetitivas de todos los demás lenguajes existen en Javascript. Primero el condicional, conocido como "if".</p>
+			<p>Un condicional cuenta de dos partes: la condición a analizar y la respuesta dependiendo del resultado de esa condición. Las condiciones siempre van a tener un resultado booleano, es decir, serán true o false, 1 o 0, no hay punto intermedio y dependen del tipo de operador de comparación que se utilice. Estos son los operadores de comparación y de paso los operadores lógicos que existen:</p>
+			<pre prism class="language-javascript">
+				<code>
+if(x == y) // Igualdad parcial (se compara el valor)
+{
+	// Hacer algo
+}
+
+if(x === y) // Igualdad total (se compara el valor y el tipo de variable)
+{
+	// Hacer otra cosa
+}
+
+if(x != y) // Desigualdad parcial (también hay total, igual que arriba)
+{
+	// bla
+}
+
+if(x &lt; y) // Menor que (también hay mayor qué ">", menor igual que "&lt;=" y mayor igual que ">=")
+{
+	// asdf
+}
+
+if(x == y && y == w) // Y, se deben cumplir ambas condiciones
+{
+	// qwer
+}
+
+if(x == y || y == w) // O, se debe cumplir al menos una de las condiciones
+{
+	//poiu
+}
+				</code>
+			</pre>
+			<blockquote>Nota: hay una forma avanzada de escribir condicionales que pueden encontrar en librerías o plugins que es la siguiente:</blockquote>
+			<pre prism class="language-javascript">
+				<code>
+if(x == y)?"Acción cuando es cierto":"Acción cuando es falso";
+
+// Esto es lo mismo que escribir
+
+if(x == y)
+{
+	"Acción cuando es cierto";
+} else
+{
+	"Acción cuando es falso";
+}
+				</code>
+			</pre>
+			<blockquote>La condición else está ahí para actuar con el resultado negativo de nuestra comparación inicial.</blockquote>
+			<p>Finalmente, existe el comparador "else if" y el "switch", que van así:</p>
+			<pre prism class="language-javascript">
+if(x == y)
+{
+	// Si es cierto
+} else if(x == z)
+{
+	// Si esto otro es cierto
+} else
+{
+	// Si ninguna de las anteriores es cierta
+}
+
+// Switch
+switch(x) {
+    case 1:
+        // Código que se ejecuta si x es 1.
+        break;
+    case 2:
+        // Código que se ejecuta si x es 2.
+        break;
+    default:
+        // Código que se ejecuta si x es otro valor cualquiera.
+}
+			</pre>
+			<h4 class="header teal-text text-lighten-2">Repetitivas</h4>
+			<p>Una repetitiva es un bloque de código que se debe repetir mientras se cumpla una condición. Existen 3 tipos de repetitivas que son for, while y do-while</p>
+			<pre prism class="language-javascript">
+				<code>
+// For
+for(i == 0; i&lt;10; i++)
+{
+	// Hacer algo
+}
+
+// Para un i que empieza en 0, mientras sea menor a 10 e incrementándose en 1 en cada vuelta que de la repetitiva, se hace lo que va dentro.
+
+// While
+while(i &lt;10)
+{
+	// Hacer algo
+	i++;
+}
+
+// Mientras i sea menor a 10, se hace lo que va dentro. El resultado sería el mismo. 
+
+// Do-While
+do
+{
+	// Hacer algo
+	i++;
+}
+while(i &lt; 10);
+
+// Se hace algo la primera vez y se repite mientras i sea menor a 10. La diferencia con el while, es que aquí la acción se hace al menos una vez, así la condición sea falsa desde un comienzo.
+				</code>
+			</pre>
+			<blockquote>Tengan cuidado con las repetitivas. La condición tiene que dejar de cumplirse en algún momento, o todo estallará.</blockquote>
+			<p>Finalmente, un método realmente útil para el desarrollo web es "console.log()". Esto nos mostrará en la consola del navegador lo que vaya dentro de los paréntesis.</p>
+			<h3 class="header teal-text text-lighten-2">Ejercicio
+			</h3>
+			<p>Entren a <a class="basic" href="https://www.javascript.com" target="_blank">Javascript.com</a> y realizen el primer ejercicio.</p>
+			<blockquote>Como material adicional de aprendizaje básico, pueden tomar el curso <a class="basic" target="_blank" href="https://www.codeschool.com/courses/javascript-road-trip-part-1">Javascript Road Trip Part 1</a> en Codeschool. Es gratuito y es un buen inicio a Javascript si no se sabe nada.</blockquote>
+		</div>
+	</div>
+</div>

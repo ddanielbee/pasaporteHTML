@@ -1,0 +1,148 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">CSS</h1>
+				<h4 class="light grey-text text-lighten-4">El equivalente al diseño de modas para la web.</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">CSS es lo que hace que la web sea bella. A muchos no les gusta, pero es, fácilmente, lo más importante de una buena experiencia en la web.</p>
+			<h3 class="header teal-text text-lighten-2">Qué es ?</h3>
+			<p>CSS significa <strong>Cascading Style Sheets</strong> y como su nombre lo indica, está compuesto de hojas de estilo en forma de cascada. Para entender a qué se refieren con cascada, imagínen una cebolla. Está llena de capas y cada capa está sobrepuesta sobre la anterior. Así mismo, en una hoja de estilos, cada regla que se da, se sobrepone a una anterior, dependiendo de la proximidad que tenga sobre el objeto al que se refiere.</p>
+			<p>Estos son ejemplos de reglas css:</p>
+			<pre prism class="language-css">
+				<code>
+h1.test {
+	line-height: 1.5em;
+	color: white;
+	margin: 25px 0;
+}
+
+#myTestId {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+}
+				</code>
+			</pre>
+			<blockquote>Un h1 con la clase test, tendrá esas reglas. Así mismo, cualquier elemento con un id de myTestId tendrá las segundas reglas.</blockquote>
+			<p>Hay varias maneras de agregar CSS a un sitio web. Se puede agregar inline, para cada elemento que sería así:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;div style="height:100%; background-color:red;">Foo Bar&lt;/div>
+				</code>
+			</pre>
+			<blockquote>Pero eso está mal hecho. Siempre que puedan evitarlo (y siempre se puede evitar), háganlo.</blockquote>
+			<p>También se puede agregar dentro del mismo archivo html:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+	&lt;head>
+		&lt;meta charset="UTF-8">
+		&lt;title>Ejemplo&lt;/title>
+		&lt;style>
+			body {
+				background-color: black;
+			}
+		&lt;/style>
+	&lt;/head>
+	&lt;body>
+		
+	&lt;/body>
+&lt;/html>
+				</code>
+			</pre>
+			<blockquote>Pero eso también está mal hecho y se debe evitar.</blockquote>
+			<p>La forma correcta de agregar CSS a un sitio web es enlazándolo desde un archivo externo. Esto nos permite mantener un orden entre presentación y contenido.</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+	&lt;head>
+		&lt;meta charset="UTF-8">
+		&lt;title>Ejemplo&lt;/title>
+		&lt;link rel="stylesheet" href="css/styles.css">
+	&lt;/head>
+	&lt;body>
+		
+	&lt;/body>
+&lt;/html>
+				</code>
+			</pre>
+			<h3 class="header teal-text text-lighten-2">CSS vs CSS3</h3>
+			<p>Así como con HTML vs HTML5, CSS y CSS3 son realmente lo mismo. CSS3 tiene entera compatibilidad hacia atrás, es decir, todas las reglas que existían en CSS, existen en CSS3. La diferencia es que durante la última implementación de CSS en los diferentes navegadores modernos, existe soporte para nuevas reglas que nos facilitan la vida.</p>
+			<p>Hay 3 diferencias realmente grandes entre lo que era CSS hace unos años y lo que es ahora:</p>
+			<ul class="collection">
+				<li class="collection-item">Soporte para "mejoras" gráficas, como bordes redondeados y sombras.</li>
+				<li class="collection-item">Transformaciones 2D y 3D.</li>
+				<li class="collection-item">Transiciones.</li>
+				<li class="collection-item">Animaciones.</li>
+			</ul>
+			<p>De estos cambios, las mejoras gráficas son especialmente importantes. En los viejos tiempos, cada que alguien quería que su caja tuviera un borde redondo, tenía que ponerle un background a esa caja. Ese background era un png de una caja vacía con bordes redondeados. Lo mismo pasaba con cualquier tipo de sombras. Esto no solo es un poco engorroso, ya que hay que estar creando imágenes todo el tiempo para esto, sino que es realmente malo desde el punto de vista de rendimiento. Estar llamando imágenes de la web es mucho más lento que procesar una regla de CSS.</p>
+			<p>Desde el punto de vista de la interacción, lo más relevante son las transiciones y las animaciones.</p>
+			<h3 class="header teal-text text-lighten-2">Transiciones</h3>
+			<p>Una transición CSS es básicamente el proceso de pasar de un valor a otro para una regla determinada. Un ejemplo de esto es pasar el alto de un elemento de 50px a 100px. Sin transición, el objeto pasaría automáticamente de un valor al otro, mientras que con transición, iría de 50 a 100 en una duración determinada.</p>
+			<p>La manera como se escribe esto es:</p>
+			<pre prism class="language-css">
+				<code>
+.transicion.card-panel {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.transicion.card-panel:hover {
+	background: #4db6ac;
+}
+				</code>
+			</pre>
+			<p>Y se ve así:</p>
+			<div class="transicion card-panel red lighten-2">
+	          <span class="white-text">Hover me !
+	          </span>
+	        </div>
+	        <p>Las transiciones de CSS son rápidas y eficientes, pero no por eso se debería abusar de su uso. El movimiento, en este caso las transiciones, deben entregar significado. Aun así, siempre es mejor hacer uso de una transición de CSS que una animación CSS o, peor aun, una animación a partir de Javascript, como con la propiedad animate de Jquery.</p>
+	        <blockquote>Como regla a seguir, CSS Transition > CSS Animation > JS Animation</blockquote>
+	        <h3 class="header teal-text text-lighten-2">Animaciones</h3>
+	        <p>Una animación CSS es lo mismo que una transición, pero con keyframes. Esto agrega un nivel de control sobre el resultado de la animación que una transición no nos puede entregar. Para entenderlo mejor, pensemos que una transición va de 0 a 100, sin parar ni cruzar en el camino. Una animación en cambio, puede tener tantos puntos de quiebre como se desee (sin exagerar, obviamente).</p>
+	        <p>Las animaciones se escriben así:</p>
+	        <pre prism class="language-css">
+				<code>
+.animacion.card-panel:hover {
+	animation-name: animacion;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes animacion {
+    0%   {background-color: #e57373;}
+    25%  {background-color: #64b5f6;}
+    50%  {background-color: #4fc3f7;}
+    100% {background-color: #f06292;}
+}
+				</code>
+			</pre>
+			<p>Y se ve así:</p>
+			<div class="animacion card-panel red lighten-2">
+	          <span class="white-text">Hover me !
+	          </span>
+	        </div>
+	        <p>En general, las animaciones funcionan mejor para elementos que deban mantenerse en movimiento (una animación infinita) o elementos que se van a mover una vez y nunca más. En el ejemplo se puede ver como es mejor usar una transición para un efecto de hover, ya que la animación no regresa a su estado original cuando la regla se deja de cumplir.</p>
+	        <h3 class="header teal-text text-lighten-2">Recursos CSS</h3>
+	        <p>Aprender cómo funcionan o qué hacen todas las reglas CSS que existen es imposible. Es por eso que estos websites nos sirven de guía e inspiración:</p>
+	        <div class="collection">
+	        	<a class="collection-item" target="_blank" href="https://css-tricks.com/">CSS-Tricks, es un blog que casi siempre tiene las respuestas a sus preguntas de CSS.</a>
+	        	<a class="collection-item" target="_blank" href="http://tympanus.net/codrops/">En Codrops, muchas personas postean experimentos con CSS que suelen tener resultados muy interesantes. A veces es muy "avant-garde", pero es útil de todas formas.</a>
+	        	<a class="collection-item" target="_blank" href="http://codyhouse.co/">Aunque no es enteramente de CSS, CodyHouse también tiene varios demos o "nuggets" como ellos los llaman que nos pueden servir de inspiración a menudo.</a>
+	        </div>
+	        <h3 class="header teal-text text-lighten-2">Frameworks</h3>
+	        <p>Hay muchos frameworks basados en CSS que buscan hacernos la vida más sencilla. Este website utiliza <a class="basic" href="http://materializecss.com/" target="_blank">MaterializeCSS</a>. También son muy conocidos y usados <a class="basic" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> de Twitter y <a class="basic" href="http://foundation.zurb.com/" target="_blank">Foundation</a> de Zurb.</p>
+	        <p>Lo que todos estos frameworks hacen, es darnos elementos prediseñados que nos pueden ayudar a prototipar algo de manera rápida y sencilla, manteniendo un cierto sentido estético. Están pensados para acelerar procesos, pero no para ser utilizados ciegamente como base para nuestros proyectos. Mi recomendación es hacer uso de algunos elementos útiles, como la grid para el diseño y desarrollo responsive y ver qué otras cosas del framework les pueden servir y desechar lo demás, a la hora de producir un website real. Así, se aseguran que su producto final no se parezca a otros tantos de miles que usan el mismo framework que ustedes.</p>
+	        <p>En este curso, vamos a hacer uso de Bootstrap, entonces, si no lo conocen, es el momento para abrir el website y leer un poco la documentación.</p>
+		</div>
+	</div>
+</div>

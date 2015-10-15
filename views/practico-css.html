@@ -1,0 +1,64 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">Ejercicio Práctico CSS</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">En esta sección, pondremos a práctica lo que hemos estado aprendiendo anteriormente.</p>
+			<blockquote>Como parte del ejercicio, descarguen <a download class="basic" href="/pasaporte/downloads/ejercicio_practico.zip" target="_blank">ejercicio_practico.zip</a>. Sobre estos archivos se realizará el ejercicio.</blockquote>
+			<p>El ejercicio consta de aplicarle una transición CSS a un elemento en los archivos que descargaron. Primero, en un editor de texto (preferiblemente sublime text), abran index.html y styles.css.</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>Ejercicio Práctico&lt;/title>
+	&lt;link rel="stylesheet" href="css/bootstrap.min.css">
+	&lt;link rel="stylesheet" href="css/normalize.css">
+	&lt;link rel="stylesheet" href="css/styles.css">
+&lt;/head>
+&lt;body>
+	&lt;div class="container">
+		&lt;div class="row">
+			&lt;div class="col-sm-12 center-block">
+				&lt;div class="jumbotron">
+				  	&lt;h1>Ejercicio Práctico&lt;/h1>
+					&lt;div class="panel panel-default animate">
+					  &lt;div class="panel-body">
+					    Una transicionsita para mi ?
+					  &lt;/div>
+					&lt;/div>
+				&lt;/div>
+				&lt;button class="btn btn-primary btn-large center-block toggle">Toggle Transición&lt;/button>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+	&lt;script src="js/jquery-2.1.4.min.js">&lt;/script>
+	&lt;script src="js/bootstrap.min.js">&lt;/script>
+&lt;/body>
+&lt;/html>
+				</code>
+			</pre>
+			<blockquote>La parte del script ignórenla por ahora. Lo que hace básicamente es que, al clickear el botón, se le agrega o quita una clase a un elemento.</blockquote>
+			<pre prism class="language-css">
+				<code>
+.animate {
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.transicion {
+
+}				</code>
+			</pre>
+			<p>Lo que deben hacer es agregar reglas CSS a la clase "transicion" para generar diferentes transiciones CSS al clickear el botón. Sencillo, no ?</p>
+		</div>
+	</div>

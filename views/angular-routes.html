@@ -1,0 +1,73 @@
+<div class="section teal lighten-2 hide-on-med-and-down">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="header white-text">AngularJS - Routes</h1>
+				<h4 class="light grey-text text-lighten-4">Rutas para guiar al navegador.</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col s12 m9 l10">
+			<p class="grey-text text-darken-4 caption">Siguiendo con Angular, hay que entender cómo funcionan las rutas.</p>
+			<h3 class="header teal-text text-lighten-2">Rutas</h3>
+			<p>Una ruta es una regla que se le entrega al módulo para que sepa qué vista mostrarle al usuario, dependiendo del espacio dentro del website que quiera acceder. Sin saberlo, toda la vida hemos usado una ruta muy sencilla: Si entramos a la raiz de un website básico, el primer archivo que se va a abrir es "index.html". Si "index.html" no existe, se buscará "index.php" y si este tampoco existe, se mostrará un error. Esta es la forma más básica de rutas: llamar directamente al archivo en cuestión.</p>
+			<p>Una implementación más compleja de este concepto es cuando se tienen distintos "templates" que se llaman dependiendo de la ruta que se intente acceder. Una ruta siempre tiene la forma de un URL.</p>
+			<h3 class="header teal-text text-lighten-2">Angular Routes</h3>
+			<p>Angular tiene una implementación muy sencilla de las rutas. Lo primero que hay que hacer es incluir el módulo AngularRoutes dentro de nuestro módulo principal de la siguiente forma: </p>
+			<pre prism class="language-javascript">
+				<code>
+var app = angular.module('app', [$ngRoute]);
+				</code>
+			</pre>
+			<blockquote>Nota: tener siempre en cuenta que los diferentes módulos son distintos archivos y todos tienen que ser incluidos en el index.html</blockquote>
+			<p>Luego de esto, debemos configurar las distintas rutas en nuestro app.js, de la siguiente forma:</p>
+			<pre prism class="language-javascript">
+				<code>
+var app = angular
+  .module('app', [    
+    'ngRoute'
+  ]) 
+  .config(function ($routeProvider) {
+    $routeProvider      
+      .when('/', {
+        templateUrl: 'views/main.html'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
+				</code>
+			</pre>
+			<blockquote>El servicio $routeProvider es el que nos ayuda a definir las distintas rutas que van a servir como reglas para que el módulo sepa cómo reaccionar.</blockquote>
+			<p>En este caso, lo que estamos diciendo es que cuando alguien pida la url básica, aquella que usualmente devolvería index.html, el módulo busque el archivo que esté en la carpeta views y tenga por nombre main.html y lo inyecte en el espacio donde va la vista.</p>
+			<p>Faltan 2 pasos para que nuestras rutas empiecen a funcionar. Primero, debemos crear la vista. Para este ejemplo, creemos una vista muy sencilla:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;h1>Soy la ruta main.html !!!&lt;/h1>
+				</code>
+			</pre>
+			<blockquote>Hay que tener en cuenta que este archivo debe ir dentro de una carpeta views, según lo expresado anteriormente.</blockquote>
+			<p>Finalmente, debemos crear el espacio donde va a ir la vista. En nuestro index.html en que definimos nuestro módulo principal, escribimos lo siguiente:</p>
+			<pre prism class="language-markup">
+				<code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>Angular&lt;/title>
+&lt;/head>
+&lt;body ng-app="app">
+	&lt;div ng-view="">&lt;/div>
+&lt;/body>
+&lt;/html>
+				</code>
+			</pre>
+			<p>Esta directiva le dice a nuestro módulo que ahí van las vistas. Angular tiene una limitación en las vistas y es que solo puede tener una vista por aplicación. Esto se soluciona haciendo uso de diferentes directivas como ng-include y ng-switch.</p>
+			<p>Con estas 3 piezas, ya deberíamos tener una aplicación de Angular sencilla, funcionando. Todavía no hace mucho, pero ya podemos entender el poder que tienen las rutas dentro de una aplicación web.</p>
+			<blockquote>Por motivos de seguridad, las vistas son consideradas una petición http externa, por esto, para que el ejemplo funcione, debe estar alocado dentro de un servidor local como XAMPP o MAMP.</blockquote>
+		</div>
+	</div>
+</div>
